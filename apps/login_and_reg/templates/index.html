@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Login and Registration</title>
+</head>
+<body>
+  <h2>Registration</h2>
+  <form action="/login_and_reg/success" method="post">
+    {% csrf_token %}
+    <label for="first_name">First Name</label>
+    <input type="text" name="first_name" required><br>
+    <label for="last_name">Last Name</label>
+    <input type="text" name="last_name" required><br>
+    <label for="email">Email</label>
+    <input type="email" name="email" required><br>
+    <label for="pwd">Password</label>
+    <input type="password" name="pwd" required><br>
+    <label for="pwd_confirm">Password Confirmation</label>
+    <input type="password" name="pwd_confirm" required><br>
+    <a href="/login_and_reg/success"><button type="">Register</button></a>
+  </form>
+  <h2>Login</h2>
+  <form action="/login_and_reg/login">
+    {% csrf_token %}
+    <label for="email">Email</label>
+    <input type="email" name="email"><br>
+    <label for="pwd">Password</label>
+    <input type="password" name="pwd"><br>
+    <a href="/login_and_reg/success"><button type="">Login</button></a>
+  </form>
+</body>
+</html>
